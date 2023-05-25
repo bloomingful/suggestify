@@ -1,0 +1,22 @@
+{
+  "eslint.probe": ["typescript", "svelte"],
+  "eslint.validate": ["typescript", "svelte"],
+  "cSpell.words": [
+    "ardenivanov",
+    "CEINTL",
+    "dbaeumer",
+    "devcontainers",
+    "ecma",
+    "errorlens",
+    "esbenp",
+    "mosapride",
+    "quickfixes",
+    "scrollto",
+    "smui",
+    "tamj",
+    "usernamehw",
+    "Yoshinori",
+    "zenkaku"
+  ],
+  "nuxt.isNuxtApp": false
+}

@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"svelte.svelte-vscode",
+				"ardenivanov.svelte-intellisense",
+				"PKief.material-icon-theme",
+				"usernamehw.errorlens",
+				"MS-CEINTL.vscode-language-pack-ja",
+				"dbaeumer.vscode-eslint",
+				"YoshinoriN.current-file-path",
+				"esbenp.prettier-vscode",
+				"tamj0rd2.ts-quickfixes-extension",
+				"mosapride.zenkaku",
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	},
+	"forwardPorts": [5173],
+	"postCreateCommand": "yarn"
+}
