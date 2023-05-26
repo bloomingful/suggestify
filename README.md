@@ -8,4 +8,4 @@
 🚧 This project is currently work-in-progress.
 
 ## Author(s)
-✍️ Blooming Dan A. Moneda
+✍️ bluemberg
