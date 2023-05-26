@@ -21,6 +21,15 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
 results = sp.playlist_tracks(playlist_id)
 
 # Extract and print the song titles and IDs
-for idx, item in enumerate(results["items"]):
-    track = item["track"]
-    print(f"{idx + 1}. {track['name']} (ID: {track['id']})")
+# for idx, item in enumerate(results["items"]):
+#     track = item["track"]
+#     print(f"{idx + 1}. {track['name']} (ID: {track['id']})")
+
+tracks_dict = {}
+for item in results['items']:
+    track = item['track']
+    title = track['name']
+    track_id = track['id']
+    tracks_dict[title] = track_id
+
+print(tracks_dict)
