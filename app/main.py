@@ -45,8 +45,6 @@ for track_title, track_id in tracks_dict.items():
     audio_features = sp.audio_features(track_id)
     tracks_dict[track_title] = audio_features[0]
 
-print(list(tracks_dict["Naked Heart"].keys()))
-
 # Remove unnecessary fields
 for track in tracks_dict:
     del tracks_dict[track]['id']
