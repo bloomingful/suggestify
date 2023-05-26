@@ -1,5 +1,5 @@
 # suggestify
-💡 A web application that suggests new songs based on user's current likes and dislikes.
+💡 A web application that suggests new music based on user's current likes and dislikes.
 
 ## How?
 📌 The program is written in Python. The algorithm uses machine learning. The web application is created using Svelte.
