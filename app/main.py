@@ -2,7 +2,10 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
 import os
+import csv
+import sys
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Credentials
@@ -44,7 +47,7 @@ sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 for track_title, track_id in tracks_dict.items():
     audio_features = sp.audio_features(track_id)
     tracks_dict[track_title] = audio_features[0]
-
+      
 # Remove unnecessary fields
 for track in tracks_dict:
     del tracks_dict[track]['id']
@@ -54,3 +57,16 @@ for track in tracks_dict:
     del tracks_dict[track]['analysis_url']
     del tracks_dict[track]['duration_ms']
     del tracks_dict[track]['time_signature']
+
+# Create a list of audio features
+features = list(tracks_dict[next(iter(tracks_dict))].keys()) # needs possible improvement for this line of code
+features.insert(0, "Track")
+
+# with open("tracks.csv", "w") as new_csv:
+#     pass
+
+# with open("tracks.csv", "w", encoding = "utf-8", newline = "") as f:
+#     w = csv.DictWriter(f, features)
+#     w.writeheader()
+#     for k in tracks_dict:
+#         w.writerow({field: tracks_dict[k].get(field) or k for field in features})
