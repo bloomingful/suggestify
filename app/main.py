@@ -1,10 +1,13 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Replace these with your own credentials and playlist ID
-client_id = "your_client_id"
-client_secret = "your_client_secret"
-redirect_uri = "your_redirect_uri"
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+redirect_uri = os.getenv("REDIRECT_URI")
 user_id = "12146041535"
 playlist_id = "7J0kact8iZpiW1Wkeksqbq"
 
