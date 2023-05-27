@@ -58,15 +58,19 @@ for track in tracks_dict:
     del tracks_dict[track]['duration_ms']
     del tracks_dict[track]['time_signature']
 
+print(tracks_dict)
+
 # Create a list of audio features
 features = list(tracks_dict[next(iter(tracks_dict))].keys()) # needs possible improvement for this line of code
 features.insert(0, "Track")
 
-# with open("tracks.csv", "w") as new_csv:
-#     pass
+print(features)
 
-# with open("tracks.csv", "w", encoding = "utf-8", newline = "") as f:
-#     w = csv.DictWriter(f, features)
-#     w.writeheader()
-#     for k in tracks_dict:
-#         w.writerow({field: tracks_dict[k].get(field) or k for field in features})
+# Create a new CSV file and write the headers and data
+with open('tracks.csv', 'w', encoding='UTF8', newline='') as csvfile:
+    csv_writer = csv.writer(csvfile)
+    csv_writer.writerow(features)  # Write the headers
+
+    for track, audio_features in tracks_dict.items():
+        row = [track] + [audio_features[feature] for feature in features[1:]]
+        csv_writer.writerow(row)  # Write the data
